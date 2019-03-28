@@ -12,9 +12,9 @@ module.exports = {
   },
 
   async register(req, res) {
-    const { email } = req.body;
+    const { cpf } = req.body;
 
-    if (await User.findOne({ where: { email } })) {
+    if (await User.findOne({ where: { cpf } })) {
       return res.redirect('back');
     }
 

@@ -7,6 +7,12 @@ module.exports = {
         primaryKey: true,
         type: DataTypes.INTEGER,
       },
+      cpf: {
+        primaryKey: true,
+        allowNull: false,
+        unique: true,
+        type: DataTypes.STRING,
+      },
       name: {
         allowNull: false,
         type: DataTypes.STRING,
