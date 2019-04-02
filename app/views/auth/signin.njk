@@ -2,9 +2,9 @@
 
 {% block body %}
   <div class="auth-wrapper">
-    <form action="" method="POST" class="form-signin">
+    <form action="/authenticate" method="POST" class="form-signin">
       <h1>Fazer Login</h1>
-      <input type="text" name="email" placeholder="Digite seu CPF">
+      <input type="text" name="cpf" placeholder="Digite seu CPF">
       <input type="password" name="password" placeholder="Digite sua senha">
       <button type="submit"> Entrar </button>
       <a href="/signup">Cadastre-se</a>

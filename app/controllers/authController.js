@@ -25,4 +25,26 @@ module.exports = {
     req.flash('success', 'Cadastro realizado com sucesso');
     return res.redirect('/');
   },
+
+  async authenticate(req, res) {
+    const { cpf, password } = req.body;
+
+    const user = await User.findOne({ where: { cpf } });
+
+    if (!user) {
+      req.flash('error', 'Usuário inexistente');
+      return res.redirect('back');
+    }
+
+    if (!await bcrypt.compare(password, user.password)) {
+      req.flash('error', 'Senha incorreta');
+      return res.redirect('back');
+    }
+
+    req.session.user = user;
+
+    return req.session.save(() => {
+      res.redirect('app/dashboard');
+    });
+  },
 };
