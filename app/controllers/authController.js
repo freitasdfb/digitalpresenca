@@ -3,6 +3,7 @@ const bcrypt = require('bcryptjs');
 const { User } = require('../models');
 
 module.exports = {
+
   signin(req, res) {
     return res.render('auth/signin');
   },
@@ -45,6 +46,12 @@ module.exports = {
 
     return req.session.save(() => {
       res.redirect('app/dashboard');
+    });
+  },
+
+  signout(req, res) {
+    req.session.destroy(() => {
+      res.redirect();
     });
   },
 };
