@@ -35,7 +35,7 @@ module.exports = {
     try {
       const { cpf, password } = req.body;
 
-      const user = await User.finddOne({ where: { cpf } });
+      const user = await User.findOne({ where: { cpf } });
 
       if (!user) {
         req.flash('error', 'Usuário inexistente');
