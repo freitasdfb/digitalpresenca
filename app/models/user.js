@@ -10,13 +10,13 @@ module.exports = (sequelize, DataTypes) => {
     password: DataTypes.STRING,
   });
 
-  // User.associate = (models) => {
-  //   User.belongsToMany(models.user, {
-  //     through: 'Users_Events',
-  //     as: 'events',
-  //     foreignKey: 'EventId',
-  //   });
-  // };
+  User.associate = (models) => {
+    User.belongsToMany(models.Event, {
+      through: 'Users_Events',
+      as: 'events',
+      foreignKey: 'EventId',
+    });
+  };
 
   return User;
 };
