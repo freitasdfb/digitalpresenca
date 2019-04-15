@@ -1,6 +1,14 @@
+const { Event } = require('../models');
+
 module.exports = {
 
-  index(req, res) {
+  async index(req, res, next) {
+    try {
+
+    } catch (err) {
+      return next(err);
+    }
+
     return res.render('dashboard/index');
   },
 

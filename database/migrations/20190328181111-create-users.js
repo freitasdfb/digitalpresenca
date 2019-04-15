@@ -2,16 +2,16 @@ module.exports = {
   up: (queryInterface, DataTypes) => {
     return queryInterface.createTable('Users', {
       id: {
+        primaryKey: true,
         allowNull: false,
         autoIncrement: true,
-        primaryKey: true,
         type: DataTypes.INTEGER,
       },
       cpf: {
         primaryKey: true,
         allowNull: false,
         unique: true,
-        type: DataTypes.STRING,
+        type: DataTypes.BIGINT,
       },
       name: {
         allowNull: false,
@@ -26,6 +26,7 @@ module.exports = {
         allowNull: false,
         type: DataTypes.STRING,
       },
+
       createdAt: {
         allowNull: false,
         type: DataTypes.DATE,
@@ -37,7 +38,5 @@ module.exports = {
     });
   },
 
-  down: (queryInterface) => {
-    return queryInterface.dropTable('Users');
-  },
+  down: queryInterface => queryInterface.dropTable('Users'),
 };
