@@ -12,11 +12,14 @@
         <strong>Eventos</strong>
 
         <ul>
-          <li>
-          <a href="">
-            Evento
-            <span>1</span>
-          </a>
+          {% for event in events %}
+            <li>
+              <a href="">
+                {{ event.nome }}
+                <span>3</span>
+              </a>
+            </li>
+          {% endfor %}
         </ul>
         <a href="">Novo Evento</a>
       </div>

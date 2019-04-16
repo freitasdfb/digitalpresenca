@@ -32,4 +32,5 @@ routes.use((err, req, res, _next) => {
     error: process.env.NODE_ENV === 'production' ? {} : err,
   });
 });
+
 module.exports = routes;
