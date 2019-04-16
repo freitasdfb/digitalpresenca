@@ -1,5 +1,5 @@
 module.exports = {
-  up: (queryInterface, DataTypes) => queryInterface.createTable('Users_Events', {
+  up: (queryInterface, DataTypes) => queryInterface.createTable('User_Event', {
     id: {
       allowNull: false,
       autoIncrement: true,
@@ -9,7 +9,7 @@ module.exports = {
 
     EventId: {
       type: DataTypes.INTEGER,
-      references: { model: 'Evento', key: 'id' },
+      references: { model: 'Events', key: 'id' },
       onDelete: 'CASCADE',
       onUpdate: 'CASCADE',
       allowNull: false,
@@ -33,5 +33,5 @@ module.exports = {
     },
   }),
 
-  down: queryInterface => queryInterface.dropTable('UserEvents'),
+  down: queryInterface => queryInterface.dropTable('User_Event'),
 };

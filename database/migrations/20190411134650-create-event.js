@@ -1,5 +1,5 @@
 module.exports = {
-  up: (queryInterface, DataTypes) => queryInterface.createTable('Evento', {
+  up: (queryInterface, DataTypes) => queryInterface.createTable('Events', {
     id: {
       primaryKey: true,
       allowNull: false,
@@ -37,5 +37,5 @@ module.exports = {
     },
   }),
 
-  down: queryInterface => queryInterface.dropTable('Evento'),
+  down: queryInterface => queryInterface.dropTable('Events'),
 };
